@@ -81,6 +81,12 @@ class GameController(object):
             letters[l] = "_"
         return ' '.join(letters)
 
+    def is_available(self, letter):
+        for l in self.__hidden_sentence:
+            if l == letter:
+                return False
+        return True
+
     def is_letter(self, letter):
         """
             Checks if a letter given by the user is contained by the hidden sentence
