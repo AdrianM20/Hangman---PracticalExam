@@ -13,6 +13,9 @@ class Console(object):
         self.__game_controller = game_controller
 
     def run_app(self):
+        """
+            Program starting point
+        """
         options = {1: self.__add_sentences,
                    2: self.__play_game,
                    3: self.__print_available_sentences}
