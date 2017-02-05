@@ -70,15 +70,11 @@ class Console(object):
             letter = input("Enter a letter: ")
             if letter.isalpha():
                 if self.__game_controller.is_letter(letter):
-                    if self.__game_controller.is_available(letter):
-                        self.__game_controller.fill_letter(letter)
-                        if self.__game_controller.game_end():
-                            print(self.__game_controller.print_sentence() + "\tYOU WON!!!\nPlay again?")
-                            break
-                        self.__print(self.__game_controller.print_sentence(), tries)
-                    else:
-                        tries += 1
-                        self.__print(self.__game_controller.print_sentence(), tries)
+                    self.__game_controller.fill_letter(letter)
+                    if self.__game_controller.game_end():
+                        print(self.__game_controller.print_sentence() + "\tYOU WON!!!\nPlay again?")
+                        break
+                    self.__print(self.__game_controller.print_sentence(), tries)
                 else:
                     tries += 1
                     self.__print(self.__game_controller.print_sentence(), tries)
